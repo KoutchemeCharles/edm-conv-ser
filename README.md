@@ -2,12 +2,12 @@
 
 **Conversational Serialization for Student Simulation**
 
-[Charles Koutcheme](https://github.com/koutch) · [Juho Leinonen](https://github.com/juholeinonen) · [Arto Hellas](https://github.com/artohellas)  
+[Charles Koutcheme](https://koutche.me/ · [Juho Leinonen](https://juholeinonen.com/) · Arto Hellas 
 *Educational Data Mining (EDM) 2026*
 
 ---
 
-We train language models to simulate how students iteratively solve programming problems — producing realistic, imperfect submission trajectories that mirror authentic learning behavior. The pipeline covers three training paradigms: **SFT**, **DPO**, and **GRPO** with execution-based rewards.
+We train language models to simulate how students iteratively solve programming problems, producing more realistic, imperfect submission trajectories that mirror authentic learning behavior. The pipeline covers three training paradigms: **SFT**, **DPO**, and **GRPO** with execution-based rewards.
 
 **Dataset:** [`koutch/falcon_code`](https://huggingface.co/datasets/koutch/falcon_code) on Hugging Face Hub.
 
@@ -45,7 +45,6 @@ python scripts/run.py --config config/experiments/<name>/<id>.json [--test_run]
 | DPO | `dpo` | Preference optimization from temporal submission order |
 | GRPO | `grpo` | RL with execution-based grade reward |
 | Evaluate | `eval` | Multi-step rollout evaluation |
-| One-step eval | `one_step` | Single-step CodeBLEU evaluation |
 
 See [`scripts/README.md`](scripts/README.md) for detailed run instructions and [`config/README.md`](config/README.md) for the configuration system.
 
