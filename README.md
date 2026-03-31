@@ -1,6 +1,6 @@
 # Teaching Language Models How to Code Like Learners
 
-**Preference Optimization for Student Simulation**
+**Conversational Serialization for Student Simulation**
 
 [Charles Koutcheme](https://github.com/koutch) · [Juho Leinonen](https://github.com/juholeinonen) · [Arto Hellas](https://github.com/artohellas)  
 *Educational Data Mining (EDM) 2026*
