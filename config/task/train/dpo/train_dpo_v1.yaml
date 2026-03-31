@@ -1,0 +1,45 @@
+name: "DPO_0.5"
+args:
+  run_name: "DPO_v3"
+  # Important GRPO parameters; default to all original settings
+  loss_type: "sigmoid"
+  beta: 0.5
+
+  # Related general training parameters - batch 
+  per_device_train_batch_size: 1
+  gradient_accumulation_steps: 8
+  gradient_checkpointing: True  
+  per_device_eval_batch_size: 8
+
+  ##
+  num_train_epochs: 1
+  warmup_ratio: 0.1
+  learning_rate: 0.00001
+  lr_scheduler_type: "cosine" 
+  optim: adamw_8bit
+  
+  eval_strategy: "steps"
+  save_strategy: "steps" 
+  save_steps: 0.25
+  eval_steps: 0.25
+  load_best_model_at_end: true 
+
+  # Data loader
+  dataloader_pin_memory: False
+  dataloader_num_workers: 1
+  torch_empty_cache_steps: 10
+
+  # lengths
+  max_prompt_length: 3072
+  max_completion_length: 1024
+  max_length: 4096
+
+max_pairs_per_traj: -1
+sampling: "grade"
+
+lora:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.0
+  bias: "none"
+  use_dora: False

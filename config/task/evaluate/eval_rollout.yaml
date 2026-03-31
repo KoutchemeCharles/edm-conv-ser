@@ -1,0 +1,10 @@
+name: "evaluate_rollout"
+gen_kwargs:
+  seed: 42
+  top_p: 1.0
+  min_p: 0.0
+  temperature: 0.0
+  max_tokens: 1024
+  truncate_prompt_tokens: 3072
+
+pre_thought: "<think>\n\n</think>\n\n```python" 

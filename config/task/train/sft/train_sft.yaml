@@ -1,0 +1,39 @@
+name: "sft"
+args:
+  assistant_only_loss: True  
+  completion_only_loss: True 
+  num_train_epochs: 1
+  learning_rate: 0.0001
+  lr_scheduler_type: cosine 
+  warmup_ratio: 0.1 # 10% of the first epoch 
+  
+  per_device_train_batch_size: 1
+  gradient_accumulation_steps: 16
+  gradient_checkpointing: True  
+  per_device_eval_batch_size: 1
+  eval_accumulation_steps: 8
+
+  # use_liger_kernel: True 
+  eval_strategy: "steps"
+  save_strategy: "steps"
+  eval_on_start: False   
+  save_steps: 0.25
+  eval_steps: 0.25
+  load_best_model_at_end: true 
+  weight_decay: 0.1
+  max_length: 4096
+  # shuffle_dataset: True
+  packing: True # required to enable sample packing!
+  # shuffle_dataset: True 
+  logging_steps: 3
+  
+  dataloader_pin_memory: False
+  dataloader_num_workers: 1
+  torch_empty_cache_steps: 10
+  
+lora:
+  r: 8
+  lora_alpha: 16
+  lora_dropout: 0.1
+  bias: "none"
+  use_dora: False

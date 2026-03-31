@@ -1,0 +1,27 @@
+\begin{table}[htbp]
+\centering
+\caption{\textbf{Rollout performance metrics.} Legend: Cov (Coverage), GP (Grade Proximity), CB (CodeBLEU). Metrics averaged across k=1 to k=5 steps ahead, with degradation ($\Delta$) showing the average drop from k=1 to k=2..5. Negative $\Delta$ values indicate performance worsens over longer rollouts. \textbf{Bold}: best performance within each model.}
+\label{tab:rollout_degradation}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{ll|ccc|ccc}
+\toprule
+ &  & \multicolumn{3}{c|}{Average} & \multicolumn{3}{c}{Degradation} \\
+Model & Method & Cov & GP & CB & $\Delta$Cov & $\Delta$GP & $\Delta$CB \\
+\midrule
+\multirow[t]{5}{*}{Qwen3-4B} & BASE & 0.528 & 0.690 & 0.491 & -0.640 & \textbf{0.278} & \textbf{-0.063} \\
+ & PARA & 0.918 & 0.763 & 0.695 & -0.118 & -0.071 & -0.137 \\
+ & SFT & 0.922 & 0.782 & \textbf{0.704} & -0.107 & -0.060 & -0.138 \\
+ & DPO & \textbf{0.982} & \textbf{0.797} & 0.700 & \textbf{-0.024} & -0.079 & -0.137 \\
+ & DAPO & 0.859 & 0.781 & 0.700 & -0.203 & -0.068 & -0.138 \\
+\cline{1-8}
+\multirow[t]{5}{*}{Qwen3-8B} & BASE & 0.570 & 0.733 & 0.580 & -0.581 & \textbf{0.287} & \textbf{-0.046} \\
+ & PARA & 0.921 & 0.785 & 0.714 & -0.112 & -0.059 & -0.121 \\
+ & SFT & 0.921 & 0.793 & \textbf{0.719} & -0.110 & -0.062 & -0.125 \\
+ & DPO & \textbf{0.957} & \textbf{0.796} & 0.714 & \textbf{-0.061} & -0.074 & -0.129 \\
+ & DAPO & 0.919 & \textbf{0.796} & 0.709 & -0.116 & -0.078 & -0.132 \\
+\cline{1-8}
+GPT-5-mini & BASE & \textbf{0.340} & \textbf{0.549} & \textbf{0.433} & \textbf{-0.910} & \textbf{0.184} & \textbf{-0.078} \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

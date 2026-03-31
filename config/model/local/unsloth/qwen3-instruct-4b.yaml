@@ -1,0 +1,42 @@
+source: local
+name: unsloth/Qwen3-4B-Instruct-2507
+
+# When loading the model and tokenizer using "from_pretrained"
+from_pretrained_kwargs:
+  max_seq_length: 4096
+  dtype: null # Auto-detection
+  load_in_4bit: True
+  fast_inference: False
+  gpu_memory_utilization: 0.80 
+  # unsloth_tiled_mlp: true
+  max_lora_rank: 16
+
+chat_kwargs:
+  chat_template_kwargs:
+    enable_thinking: True    
+
+# When setting up proper tokenizer template 
+chat_template: qwen3
+
+# When training the model on responses only 
+response_only:
+  instruction_part: "<|im_start|>user\n"
+  response_part: "<|im_start|>assistant\n"
+
+# When loading the model with VLLM kwargs
+vllm_kwargs:
+  max_num_seqs: 256
+  max_model_len: 4096
+  gpu_memory_utilization: 0.80
+  enable_prefix_caching: True
+  trust_remote_code: True
+
+
+# Generation parameters 
+gen_kwargs:
+  seed: 42
+  top_p: 1.0 
+  top_k: -1
+  temperature: 0.0
+  max_tokens: 1024
+  truncate_prompt_tokens: 3072

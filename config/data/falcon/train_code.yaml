@@ -1,0 +1,15 @@
+name: "falconcode_train-code"
+split: "train"
+
+# Preprocessing
+preprocessing:
+  remove_exams: true 
+  remove_non_compiling: true 
+  remove_runtime_errors: false 
+
+# Individual student processing
+student:
+  min_grade: 50
+  format: "code"
+  feedback_level: "summary" 
+
