@@ -2,7 +2,7 @@
 
 **Conversational Serialization for Student Simulation**
 
-[Charles Koutcheme](https://koutche.me/ · [Juho Leinonen](https://juholeinonen.com/) · Arto Hellas 
+[Charles Koutcheme](https://koutche.me/) · [Juho Leinonen](https://juholeinonen.com/) · Arto Hellas 
 *Educational Data Mining (EDM) 2026*
 
 ---
